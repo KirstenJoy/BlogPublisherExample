@@ -52,7 +52,7 @@ app.use(parser.urlencoded({ extended: true }));
 app.set('view engine', 'ejs');
 
 //Home Sction / API
-app.get('/', (req, res) => {
+app.get('/index', (req, res) => {
 
     var apiurl = "http://localhost:4000/api/";
     http.get(apiurl, (response) => {
@@ -99,7 +99,7 @@ app.post('/add', (req, res) => {
     });
 
     data.save();
-    res.redirect('/');
+    res.redirect('/index');
     res.json({ "Success": "Has been Succeedeed" });
 
 });
