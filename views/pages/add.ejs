@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../components/head') %>
+</head>
+
+<body>
+    <div class="jumbotron bg-dark text-white text-center">
+        <div class="container mx-auto text-center text-white">
+            <form action="/add" method="post" class="mx-auto" style="width: 70%;">
+                <input type="text" name="Title" id="" class="form-control" placeholder="Add title"> <br>
+                <textarea name="Description" id="" cols="30" placeholder="Description" rows="10" class="form-control"></textarea> <br>
+                <input type="text" name="imgurl" id="" placeholder="Url of the Image" class="form-control"> <br>
+                <input type="text" name="publisher" id="" placeholder="Publisher Name" class="form-control"> <br>
+
+                <button class="btn btn-light btn-lg" type="submit">Add</button>
+
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/2405/2405172.svg" type="image/x-icon">
+    <%- include('./components/head') %>
+        <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="jumbotron text-center header1">
+        <%- include('./components/navbar') %>
+    </div>
+    <!-- Icons Grid -->
+    <section class="features-icons bg-light text-center icons">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <img class="icon" src="https://www.flaticon.com/svg/static/icons/svg/2034/2034607.svg" alt="">
+                        </div>
+                        <h3>Fully Responsive</h3>
+                        <p class="lead mb-0">This website is great for any level of Bloger!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <img class="icon" src="https://www.flaticon.com/premium-icon/icons/svg/2558/2558343.svg" alt="">
+                        </div>
+                        <h3>Easy to Use </h3>
+                        <p class="lead mb-0">Ready to use with your own content, or customize the the lay out of your blog post!</p>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="features-icons-item mx-auto mb-0 mb-lg-3">
+                        <div class="features-icons-icon d-flex">
+                            <img class="icon" src="https://www.flaticon.com/premium-icon/icons/svg/3322/3322028.svg" alt="">
+                        </div>
+                        <h3>Support</h3>
+                        <p class="lead mb-0">We have a great suppoort system to help you with any issue you have!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <div class="row blog1">
+
+        <% for (var x=0; x < front.length; x++){ %>
+
+            <div class="col-xs-6 blog2 " style="margin-bottom: 10px;">
+
+                <div class="card" style="width: 17rem;">
+                    <img class="card-img-top" src="<%= front[x].imgUrl %> " alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= front[x].Title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= front[x].description.slice(0, 120).replace('\r\n', "<br>") %></p>
+                        <a href="/dashboard" class="btn btn-primary">
+                            <%= front[x].Date %>
+                        </a>
+                    </div>
+                </div>
+                <% } %>
+            </div>
+    </div>
+    <%- include('./components/footer') %>
+</body>
+
+</html>
